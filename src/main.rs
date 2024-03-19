@@ -26,7 +26,8 @@ fn main() {
 
         println!("Podaj literę: ");
         io::stdout().flush().unwrap();
-        let input = String::new(); // Input
+        let mut input = String::new(); // Input
+        io::stdin().read_line(&mut input).expect("Błąd wczytywania danych.");
 
         let guessed_letter = match input.trim().chars().next() { // sprawdza czyjak nie ma litery to kontynuuje
             Some(letter) => letter,
